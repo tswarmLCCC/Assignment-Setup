@@ -1,0 +1,44 @@
+still most other answers here are still not correct unfortunately - apart LennartRegebro's (and BrenBarn's) which is incomplete. For the benefit of future readers - the OP should, first of all, add the __init__.py files as in
+
+root
+    application
+        __init__.py
+        main.py
+        tests
+            __init__.py
+            main.py
+then:
+
+$ cd root
+$ python -m application.tests.main # note no .py
+or
+
+$ cd application
+$ python -m tests.main
+Running a script directly from inside its package is an antipattern - the correct way is running with the -m switch from the parent directory of the root package - this way all packages are detected and relative/absolute imports work as expected.
+
+Share
+Improve this answer
+Follow
+edited Jan 22 at 14:06
+answered Jul 8, 2021 at 10:29
+Mr_and_Mrs_D's user avatar
+Mr_and_Mrs_D
+33.8k4343 gold badges188188 silver badges367367 bronze badges
+3
+Finally the correct answer. Thanks a lot! – 
+Ilya Chernov
+ CommentedAug 31, 2021 at 15:06
+Finally I find this answer. A lot of thanks. – 
+dudung
+ CommentedApr 17, 2022 at 15:00
+1
+I agree with init.py, but what if you're running from a web hosting environment and not from the terminal? – 
+toddmo
+ CommentedSep 15, 2022 at 15:48 
+@toddmo in that case the environment should be configured to launch the interpreter using the -m switch – 
+Mr_and_Mrs_D
+ CommentedSep 19, 2022 at 8:38
+Only true working good answer on all the question posts about this. Thank you – 
+sglbl
+ CommentedOct 16, 2023 at 14:32

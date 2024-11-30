@@ -15,7 +15,8 @@ or
 
 $ cd application
 $ python -m tests.main
-Running a script directly from inside its package is an antipattern - the correct way is running with the -m switch from the parent directory of the root package - this way all packages are detected and relative/absolute imports work as expected.
+Running a script directly from inside its package is an antipattern - the correct way is running with the -m switch from the parent directory of the root package -
+this way all packages are detected and relative/absolute imports work as expected.
 
 Share
 Improve this answer

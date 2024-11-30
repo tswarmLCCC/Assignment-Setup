@@ -2,7 +2,7 @@
 
 def main():
     pay_rate = 25
-    print("Simple Pay Program\n")
+    #print("Simple Pay Program\n")
     hours = int(input("How many hours did you work: "))
 
     tax = 0.125
